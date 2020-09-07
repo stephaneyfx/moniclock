@@ -1,0 +1,17 @@
+[package]
+name = "moniclock"
+version = "0.1.0"
+authors = ["Stephane Raux <stephaneyfx@gmail.com>"]
+edition = "2018"
+description = "Monotonic clock"
+license = "MIT"
+homepage = "https://github.com/stephaneyfx/moniclock"
+repository = "https://github.com/stephaneyfx/moniclock.git"
+readme = "README.md"
+keywords = ["monotonic", "clock"]
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2.71"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.9", features = ["impl-default", "profileapi"] }
